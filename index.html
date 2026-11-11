@@ -446,6 +446,100 @@
         .data-table tbody tr:nth-child(even) td { background: rgba(255,255,255,0.03); }
         .data-table tbody tr:last-child td { border-bottom: none; }
 
+        /* ---- Pay Rules Table (slide 6) ---- */
+        .pay-rules-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 23px;
+            margin-top: 32px;
+        }
+
+        .pay-rules-table th {
+            text-align: left;
+            font-family: var(--font-display);
+            font-size: 16px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            padding: 14px 18px;
+            border-bottom: 2px solid rgba(79,209,197,0.35);
+        }
+
+        .pay-rules-table td {
+            padding: 16px 18px;
+            color: var(--text-primary);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .pay-rules-table tbody tr:nth-child(even) td { 
+            background: rgba(255,255,255,0.03); 
+        }
+
+        .pay-rules-table tbody tr:last-child td { 
+            border-bottom: none; 
+        }
+
+        .pay-rules-cell {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            min-width: 160px;
+        }
+
+        .pay-rules-check {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            font-size: 18px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .pay-rules-check.yes {
+            background: rgba(61,220,132,0.25);
+            color: #3ddc84;
+            border: 1px solid rgba(61,220,132,0.5);
+        }
+
+        .pay-rules-check.no {
+            background: rgba(255,90,95,0.15);
+            color: #ff5a5f;
+            border: 1px solid rgba(255,90,95,0.3);
+        }
+
+        .pay-rules-asterisk {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+        }
+
+        .pay-rules-asterisk::after {
+            content: '*';
+            color: var(--accent-2);
+            font-weight: bold;
+            margin-left: 2px;
+        }
+
+        .pay-rules-asterisk:hover::before {
+            content: attr(data-note);
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15,25,40,0.95);
+            color: var(--text-primary);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 18px;
+            white-space: nowrap;
+            z-index: 10;
+            border: 1px solid rgba(79,209,197,0.3);
+            pointer-events: none;
+        }
+
         /* ---- Pros / Cons (slide 5) ---- */
         .pc-grid {
             display: grid;
@@ -738,6 +832,92 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
+
+
+            <section class="slide">
+                <div class="slide-shell">
+                    <div class="eyebrow reveal">Pay Rule Comparison</div>
+                    <h2 class="title reveal" style="font-size: 56px;">Meet the pay rules</h2>
+                    <table class="pay-rules-table reveal">
+                        <thead>
+                            <tr>
+                                <th style="width: 35%;">Pay Rule</th>
+                                <th style="width: 21%;">Time Link</th>
+                                <th style="width: 21%;">Camber Payroll</th>
+                                <th style="width: 23%;">CentralReach Payroll</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dedupe overlaps.</td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check yes">✓</span></div></td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check yes">✓</span></div></td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Summary calculates overtime.</td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check yes">✓</span></div></td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check yes">✓</span></div></td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check yes">✓</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Prioritize paycodes so overlaps and overtime favor the employee.</td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check yes">✓</span></div></td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗</span></div></td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Summary calculates meal premiums.</td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check yes">✓</span></div></td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗</span></div></td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗ <span class="pay-rules-asterisk" data-note="RPA Oct 2026"></span></span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Exclude salaried employees.</td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check yes">✓</span></div></td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check yes">✓ <span class="pay-rules-asterisk" data-note="System must match UKG"></span></span></div></td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check yes">✓ <span class="pay-rules-asterisk" data-note="System must match UKG"></span></span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Maximum shift = 12 hours.</td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check yes">✓</span></div></td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗</span></div></td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Automatically infer waiting time for no shows.</td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check yes">✓</span></div></td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗</span></div></td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗ <span class="pay-rules-asterisk" data-note="RPA"></span></span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Apply Reporting Time rules.</td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check yes">✓</span></div></td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗</span></div></td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗ <span class="pay-rules-asterisk" data-note="RPA"></span></span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Automate adjustments.</td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check yes">✓</span></div></td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check yes">✓ <span class="pay-rules-asterisk" data-note="Reclassifications and shift splitting causes problems"></span></span></div></td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Automate adjustments for a formerly-hourly employee.</td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check yes">✓</span></div></td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗</span></div></td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗</span></div></td>
+                            </tr>
+                            <tr>
+                                <td>Stitch together continuous entries.</td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check yes">✓</span></div></td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗</span></div></td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗</span></div></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </section>
 
