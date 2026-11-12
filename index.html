@@ -738,12 +738,12 @@
                         <div>
                             <div class="eyebrow reveal">Project intro</div>
                             <h1 class="title reveal">Time Link</h1>
-                            <p class="subtitle reveal">A payroll rules engine that turns healthcare billing data into payroll-ready output.</p>
+                            <p class="subtitle reveal">A payroll logic engine that turns healthcare timesheets into payroll-ready output.</p>
                             <div class="accent-line reveal"></div>
                             <div class="value-grid">
                                 <div class="value-card reveal"><strong>One engine</strong><span class="small">Replace platform-specific custom payroll exports with a shared rules layer.</span></div>
-                                <div class="value-card reveal"><strong>Preserve records</strong><span class="small">Keep the original medical record intact while payroll logic runs separately.</span></div>
-                                <div class="value-card reveal"><strong>Automation</strong><span class="small">Automate certain pre-payroll audits that are currently manual.</span></div>
+                                <div class="value-card reveal"><strong>Preserve records</strong><span class="small">Keep the original record intact while payroll logic runs separately.</span></div>
+                                <div class="value-card reveal"><strong>Simplify submission</strong><span class="small">Eliminate pre-payroll audits that are currently manual.</span></div>
                                 <div class="value-card reveal"><strong>Visibility</strong><span class="small">Improve pay visibility and approval workflows in UKG.</span></div>
                             </div>
                         </div>
@@ -792,51 +792,6 @@
                         <img src="./src/TimeLink_Development_Surfaces.png" alt="Development surfaces showing LEARN and Upstart13 responsibilities" />
                     </div>
                     <p class="subtitle reveal">LEARN will standardize source data, while Upstart13 builds the rules engine and user experience.</p>
-                </div>
-            </section>
-
-
-            <section class="slide">
-                <div class="slide-shell">
-                    <div class="eyebrow reveal">Upcoming Milestones</div>
-                    <h2 class="title reveal" style="font-size: 52px;">Key dates for migration</h2>
-                    <div class="ms-track reveal">
-                        <div class="ms-line"></div>
-                        <div class="ms-cols">
-                            <div class="ms-col">
-                                <div class="ms-dot"></div>
-                                <div class="ms-date">Current State</div>
-                                <div class="ms-box">
-                                    <ul class="bullet-list">
-                                        <li>Highway payroll powered by Camber reports</li>
-                                        <li>Time Link reports validated</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="ms-col">
-                                <div class="ms-dot"></div>
-                                <div class="ms-date">12/07/2026</div>
-                                <div class="ms-box">
-                                    <ul class="bullet-list">
-                                        <li>Little Leaves moves into Highway</li>
-                                        <li>Payroll via Camber reports</li>
-                                        <li>Time Link runs alongside for validation</li>
-                                        <li>Payroll team tries Time Link UI and features</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="ms-col">
-                                <div class="ms-dot"></div>
-                                <div class="ms-date">1/31/2027</div>
-                                <div class="ms-box">
-                                    <ul class="bullet-list">
-                                        <li>New England moves into Highway</li>
-                                        <li>Payroll powered by Time Link 🎉</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </section>
 
@@ -965,31 +920,31 @@
                                 <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗</span></div></td>
                             </tr>
                             <tr>
-                                <td>Automatically infer waiting time for no shows.</td>
+                                <td>Apply reporting time rules; infer waiting time.</td>
                                 <td><div class="pay-rules-cell"><span class="pay-rules-check yes">✓</span></div></td>
                                 <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗</span></div></td>
                                 <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗ <span class="pay-rules-asterisk" data-note="RPA"></span></span></div></td>
                             </tr>
                             <tr>
-                                <td>Apply Reporting Time rules.</td>
+                                <td>Apply mileage eligibility rules.</td>
                                 <td><div class="pay-rules-cell"><span class="pay-rules-check yes">✓</span></div></td>
                                 <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗</span></div></td>
-                                <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗ <span class="pay-rules-asterisk" data-note="RPA"></span></span></div></td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗ <span class="pay-rules-asterisk" data-note="Atlantic: No. Wisconsin: Yes."></span></div></td>
                             </tr>
                             <tr>
                                 <td>Automate adjustments.</td>
                                 <td><div class="pay-rules-cell"><span class="pay-rules-check yes">✓</span></div></td>
-                                <td><div class="pay-rules-cell"><span class="pay-rules-check yes">✓ <span class="pay-rules-asterisk" data-note="Reclassifications and shift splitting causes problems"></span></span></div></td>
+                                <td><div class="pay-rules-cell"><span class="pay-rules-check yes">✓ <span class="pay-rules-asterisk" data-note="Some problems when splitting timesheets or reclassifying pay"></span></span></div></td>
                                 <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗</span></div></td>
                             </tr>
                             <tr>
-                                <td>Automate adjustments for a formerly-hourly employee.</td>
+                                <td>Combine back-to-back time, reducing adjustments.</td>
                                 <td><div class="pay-rules-cell"><span class="pay-rules-check yes">✓</span></div></td>
                                 <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗</span></div></td>
                                 <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗</span></div></td>
                             </tr>
                             <tr>
-                                <td>Stitch together continuous entries.</td>
+                                <td>Automate adjustments for a formerly-hourly employee.</td>
                                 <td><div class="pay-rules-cell"><span class="pay-rules-check yes">✓</span></div></td>
                                 <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗</span></div></td>
                                 <td><div class="pay-rules-cell"><span class="pay-rules-check no">✗</span></div></td>
@@ -1039,18 +994,63 @@
             </section>
 
 
+            <section class="slide">
+                <div class="slide-shell">
+                    <div class="eyebrow reveal">Upcoming Milestones</div>
+                    <h2 class="title reveal" style="font-size: 52px;">Key dates for migration</h2>
+                    <div class="ms-track reveal">
+                        <div class="ms-line"></div>
+                        <div class="ms-cols">
+                            <div class="ms-col">
+                                <div class="ms-dot"></div>
+                                <div class="ms-date">Current State</div>
+                                <div class="ms-box">
+                                    <ul class="bullet-list">
+                                        <li>Highway payroll powered by Camber reports</li>
+                                        <li>Time Link reports validated</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="ms-col">
+                                <div class="ms-dot"></div>
+                                <div class="ms-date">12/07/2026</div>
+                                <div class="ms-box">
+                                    <ul class="bullet-list">
+                                        <li>Little Leaves moves into Highway</li>
+                                        <li>Payroll via Camber reports</li>
+                                        <li>Time Link runs alongside for validation</li>
+                                        <li>Payroll team tries Time Link UI and features</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="ms-col">
+                                <div class="ms-dot"></div>
+                                <div class="ms-date">1/31/2027</div>
+                                <div class="ms-box">
+                                    <ul class="bullet-list">
+                                        <li>New England moves into Highway</li>
+                                        <li>Payroll powered by Time Link 🎉</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
             <section class="slide active">
                 <div class="slide-shell">
                     <div class="hero-grid">
                         <div>
                             <div class="eyebrow reveal">In conclusion</div>
                             <h1 class="title reveal">Time Link</h1>
-                            <p class="subtitle reveal">A payroll rules engine that turns healthcare billing data into payroll-ready output.</p>
+                            <p class="subtitle reveal">A payroll logic engine that turns healthcare timesheets into payroll-ready output.</p>
                             <div class="accent-line reveal"></div>
                             <div class="value-grid">
                                 <div class="value-card reveal"><strong>One engine</strong><span class="small">Replace platform-specific custom payroll exports with a shared rules layer.</span></div>
-                                <div class="value-card reveal"><strong>Preserve records</strong><span class="small">Keep the original medical record intact while payroll logic runs separately.</span></div>
-                                <div class="value-card reveal"><strong>Automation</strong><span class="small">Automate certain pre-payroll audits that are currently manual.</span></div>
+                                <div class="value-card reveal"><strong>Preserve records</strong><span class="small">Keep the original record intact while payroll logic runs separately.</span></div>
+                                <div class="value-card reveal"><strong>Simplify submission</strong><span class="small">Eliminate pre-payroll audits that are currently manual.</span></div>
                                 <div class="value-card reveal"><strong>Visibility</strong><span class="small">Improve pay visibility and approval workflows in UKG.</span></div>
                             </div>
                         </div>
